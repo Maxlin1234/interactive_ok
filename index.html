@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Comptible" content="IE=edge"> -->
+    <meta name="viewport"  content="width=device-width,initial-scale=1.0" content="IE=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheet/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <div id="app">
+       <div class="container">
+        <div class="d-flex outer">
+            
+            <!-- title -->
+            <h5 class="title-sub">reCONNECT {{new Date().getFullYear()}}:BORDERLESS CANVAS</h5>
+            <h2 class="title">{{title}}</h2>
+            <h2 class="title">{{subtitle}}</h2>
+            <!--/title  -->
+            <!-- box1 -->
+           <div class="box1"><div class="box1_data"><div>{{project}}</div>
+           <br>
+           <div>- - - - - - - - - - - - - - - - - - - - - - - </div>
+           <br>
+           <div>兩地線上人數 :{{number}}</div>
+           </div></div>
+            <!-- box2 -->
+           <div class="box2 flex-2">
+            
+            <!-- box2title -->
+           <div class="box2_data" style="display:flex;margin-top:20px;margin-bottom: 20px;"><h3>{{parameter}}</h3></div>
+            <!-- boxtitle end -->
+
+            <!-- slider -->
+            <div class="block" style="width: 200px;"> 
+             <span class="demonstration"><el-radio v-model="radio" label="1">模式1</el-radio>
+                <el-radio v-model="radio" label="2">模式2</el-radio></span>
+             
+             <el-slider v-model="value2"></el-slider>
+             <el-slider v-model="value2"></el-slider>
+             <script>
+                export default {
+                  data () {
+                    return {
+                      radio: '1'
+                    };
+                  }
+                }
+              </script>
+            </div>
+           <!-- slider end -->
+           
+           <!-- colorpicker -->
+           <div class="colorpicker"> 
+            <!-- <dic class="color-1">
+            <label for="colorwheel">Color1</label>
+            <input type="color" id="colorpicker" value="#0000ff"> -->
+            <div class="picker" style="align-items: center;">
+                <iframe src="./component/index.html" height="400" width="300"  scrolling="no" frameborder="0"></iframe>
+            </div>
+            </div>
+            
+           <!-- colorpicker end -->
+
+           <!-- button -->
+           <div class="button">
+            <el-button round>send</el-button>
+           <el-button round>restart</el-button>
+           </div>
+           <!-- button end -->
+           </div>
+
+           <!-- box2 end -->
+
+         
+            <!-- box3 -->
+           <div class="box3">
+            <div class="box3_data"><h3>給對互動機制有興趣的你</h3>
+                <br>關於擴散蔓延RecationDiffusion
+            </div>
+           </div>
+
+        </div>
+       </div>
+            </div>
+       
+       </div>
+    </div>
+    
+    
+ 
+    <script>
+        ;(function(){
+        // let data = {
+            
+        // }
+        let vm = new Vue({
+            el:"#app",
+            data:{
+               year: new Date().getFullYear(),
+              title:'互動調色器',
+              subtitle:'Interactive color Picker',
+              project:'C-LAB DOME & NTMFA U-108',
+              number:'0',
+              parameter:'改變參數',
+            },
+        })
+    })()
+       </script> 
+</body>
+
+<footer>
+
+</footer>
+
+
+
+</html>
